@@ -9,9 +9,9 @@ export default function Product(props){
                           <div className="card-body">
                           <h5 className="card-title">{product.title}</h5>
 <p className="card-text">
-  {product.description.length > 100 
-    ? product.description.slice(0, 100) + "..." 
-    : product.description}
+   {(product.description && product.description.length > 100)
+    ? product.description.slice(0, 100) + "..."
+    : product.description || "Loading description..."}
 </p>                          <p>price: {product.price}$</p>
                           {showbutton && <Link className="btn btn-primary" to={`products/${product.id}`}>Details</Link>}
                           
